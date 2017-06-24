@@ -1,0 +1,1562 @@
+
+==================== FINAL INTERFACE ====================
+2017-06-24 23:59:06.640243575 UTC
+
+interface main@main:KnapsackSpec 8002
+  interface hash: 7ec31cca1d9e5db4da2baffc34c6d502
+  ABI hash: edd124b96f2db1883a8d80acfaaf3b32
+  export-list hash: 555bc8d91cb83de898659b3440942a9b
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 82fcc95bff593ecd65ebffd0c6d24d4a
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  KnapsackSpec.emptyKnapsack
+  KnapsackSpec.exampleKnapsack
+  KnapsackSpec.overFilledKnapsack
+  KnapsackSpec.spec
+module dependencies:
+package dependencies: HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI
+                      MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH
+                      QuickCheck-2.9.2@QuickCheck-2.9.2-Jyj4gc4JxkEIgGFLAsGhs9
+                      ansi-terminal-0.6.3.1@ansi-terminal-0.6.3.1-3RTqikoQf47ajVD9m8zgB
+                      array-0.5.1.1@array-0.5.1.1
+                      async-2.1.1.1@async-2.1.1.1-8yywY4inVGRLJSCg60gBXj base-4.9.1.0
+                      call-stack-0.1.0@call-stack-0.1.0-FYVrCPXGP9EGAuTW32963O
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
+                      filepath-1.4.1.1@filepath-1.4.1.1
+                      genetic-0.1.0.0@genetic-0.1.0.0-4Qteo4SiaPs2YiyYDVTgEQ
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      hspec-2.4.3@hspec-2.4.3-1FDnT5qa4j3Kk2ZAmhP9xh
+                      hspec-core-2.4.3@hspec-core-2.4.3-4aSW6vl2zjIEbOOJG9KdQp
+                      hspec-expectations-0.8.2@hspec-expectations-0.8.2-DujBeQFEMmfJJRLad7XQgd
+                      integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH
+                      quickcheck-io-0.1.4@quickcheck-io-0.1.4-C5t3MfRsr5zrFam5nRAFy
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      setenv-0.1.1.3@setenv-0.1.1.3-8dEhk6JWvlmCmVyBammSpu
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      template-haskell-2.11.1.0
+                      tf-random-0.5@tf-random-0.5-BGjMgO8m67W8CHiEl15kZ7
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      unix-2.7.2.1@unix-2.7.2.1
+                      vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         quickcheck-io-0.1.4@quickcheck-io-0.1.4-C5t3MfRsr5zrFam5nRAFy:Test.QuickCheck.IO
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Fusion.Bundle
+family instance modules: MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity base-4.9.1.0:Data.List.NonEmpty
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Semigroup
+                         base-4.9.1.0:Data.Type.Equality base-4.9.1.0:Data.Version
+                         base-4.9.1.0:Data.Void base-4.9.1.0:GHC.Exts
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         hspec-core-2.4.3@hspec-core-2.4.3-4aSW6vl2zjIEbOOJG9KdQp:Test.Hspec.Core.Example
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH:Control.Monad.Primitive
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  genetic-0.1.0.0@genetic-0.1.0.0-4Qteo4SiaPs2YiyYDVTgEQ:Genetic 191c5ed62dd83d3f537239e1c624156f
+import  -/  genetic-0.1.0.0@genetic-0.1.0.0-4Qteo4SiaPs2YiyYDVTgEQ:Knapsack 8244b6b09344048c8598ba1668a9d17e
+import  -/  hspec-2.4.3@hspec-2.4.3-1FDnT5qa4j3Kk2ZAmhP9xh:Test.Hspec 66ca3762ee707172fe9b54dac53f915f
+import  -/  hspec-core-2.4.3@hspec-core-2.4.3-4aSW6vl2zjIEbOOJG9KdQp:Test.Hspec.Core.Spec 568ac3448450711cdd5c134e98c1e405
+import  -/  hspec-core-2.4.3@hspec-core-2.4.3-4aSW6vl2zjIEbOOJG9KdQp:Test.Hspec.Core.Spec.Monad 4c423d18ae8df30cf370a15f6a7a2608
+import  -/  hspec-expectations-0.8.2@hspec-expectations-0.8.2-DujBeQFEMmfJJRLad7XQgd:Test.Hspec.Expectations 7783c70233bb75afab7f7705bd782d86
+import  -/  vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector 5a746e9670329619c461c982b12cd97b
+f7c340e9fa9cd2def13b63e100c52236
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   KnapsackSpec.$trModule2
+                   KnapsackSpec.$trModule1) -}
+2e66e21f0a27231d8ff91b78693236dc
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "KnapsackSpec"#) -}
+675077eb45194477ea4c2450c544683d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+54b53a68ec9f8d0ff855b31a095cc843
+  emptyKnapsack :: Genetic.Genome Knapsack.Element
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ (Data.Vector.Vector Knapsack.Element)
+                        KnapsackSpec.emptyKnapsack1 of ds1 { (#,#) ipv1 ipv2 ->
+                 ipv2 }) -}
+23e5de838d00c04e2e30f2e91b9465b4
+  emptyKnapsack1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Vector.Vector Knapsack.Element #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newArray#
+                        @ Knapsack.Element
+                        @ (Control.Monad.Primitive.PrimState
+                             (GHC.ST.ST GHC.Prim.RealWorld))
+                        0#
+                        (Data.Vector.Mutable.uninitialised @ Knapsack.Element)
+                        s1
+                          `cast`
+                        (GHC.Prim.State#
+                           (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                     <GHC.Prim.RealWorld>_N)))_R of ds1 { (#,#) ipv ipv1 ->
+                 case KnapsackSpec.emptyKnapsack48
+                        GHC.Types.SPEC
+                        ((Data.Vector.Mutable.MVector
+                            @ (Control.Monad.Primitive.PrimState
+                                 (GHC.ST.ST GHC.Prim.RealWorld))
+                            @ Knapsack.Element
+                            0#
+                            0#
+                            ipv1)
+                           `cast`
+                         (Sub (Sym (Data.Vector.D:R:MutableVector[0])) <Control.Monad.Primitive.PrimState
+                                                                          (GHC.ST.ST
+                                                                             GHC.Prim.RealWorld)>_N <Knapsack.Element>_N),
+                         KnapsackSpec.emptyKnapsack47)
+                        KnapsackSpec.emptyKnapsack2
+                        ipv
+                          `cast`
+                        (GHC.Prim.State#
+                           (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                <GHC.Prim.RealWorld>_N))_R of ds2 { (#,#) ipv6 ipv7 ->
+                 case ipv7 of wild5 { (,) v' n ->
+                 case v'
+                        `cast`
+                      (Sub (Data.Vector.D:R:MutableVector[0]) <Control.Monad.Primitive.PrimState
+                                                                 (GHC.ST.ST
+                                                                    GHC.Prim.RealWorld)>_N <Knapsack.Element>_N) of wild { Data.Vector.Mutable.MVector dt dt1 dt2 ->
+                 case n of dt5 { GHC.Types.I# dt6 ->
+                 case GHC.Prim.unsafeFreezeArray#
+                        @ (Control.Monad.Primitive.PrimState
+                             (GHC.ST.ST GHC.Prim.RealWorld))
+                        @ Knapsack.Element
+                        dt2
+                        ipv6
+                          `cast`
+                        (GHC.Prim.State#
+                           (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                     <GHC.Prim.RealWorld>_N)))_R of ds4 { (#,#) ipv2 ipv3 ->
+                 (# ipv2
+                      `cast`
+                    (GHC.Prim.State#
+                       (Control.Monad.Primitive.D:R:PrimStateST[0]
+                            <GHC.Prim.RealWorld>_N))_R,
+                    Data.Vector.Vector
+                      @ Knapsack.Element
+                      dt
+                      dt6
+                      ipv3 #) } } } } } }) -}
+546d90a3e53519728f2318b1b03092a7
+  emptyKnapsack10 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack37
+                   KnapsackSpec.emptyKnapsack11) -}
+c006c06dd35db7bd8a0193ea607ad58d
+  emptyKnapsack11 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack35
+                   KnapsackSpec.emptyKnapsack12) -}
+6c304b8c0879fe00194b97afae827600
+  emptyKnapsack12 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack32
+                   KnapsackSpec.emptyKnapsack13) -}
+74bb4a6a00142b9a8f0a68fadc0b4620
+  emptyKnapsack13 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack29
+                   KnapsackSpec.emptyKnapsack14) -}
+21364f493ab8de978761e91becd87894
+  emptyKnapsack14 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack25
+                   KnapsackSpec.emptyKnapsack15) -}
+274203fc191b64905e1ccf816e9507e3
+  emptyKnapsack15 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack21
+                   KnapsackSpec.emptyKnapsack16) -}
+2f54ae7414cde671f1c3e7268a59873b
+  emptyKnapsack16 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack17
+                   (GHC.Types.[] @ Knapsack.Element)) -}
+e6af2bffbf48f9315828f3114d1fa42d
+  emptyKnapsack17 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack20 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack19
+                   KnapsackSpec.emptyKnapsack18) -}
+e79d6247a14953ebeefebbab684d8ed1
+  emptyKnapsack18 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 7#) -}
+cacf1a9b31a92e8fa401813e0fbf0f03
+  emptyKnapsack19 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 6#) -}
+37584a538ab9dd49a5f8b2bdb44a7334
+  emptyKnapsack2 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack46
+                   KnapsackSpec.emptyKnapsack3) -}
+746551b5a9ab8bfdb9ee5ac0b0203631
+  emptyKnapsack20 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 15#) -}
+b4e221425e69e4eab8e132f67cecd75b
+  emptyKnapsack21 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack24 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack23
+                   KnapsackSpec.emptyKnapsack22) -}
+7f6559200ab86656af0c471dc872eb79
+  emptyKnapsack22 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 9#) -}
+cf7f946910a3e342b4755c5ed0560d0c
+  emptyKnapsack23 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 4#) -}
+04916543d17b6f3379fe97d3ec0731c7
+  emptyKnapsack24 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 14#) -}
+e9e1157a7ba2228ba887566c86e11e79
+  emptyKnapsack25 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack28 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack27
+                   KnapsackSpec.emptyKnapsack26) -}
+24f6a40c81f8459ed2cad325cda810de
+  emptyKnapsack26 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 1#) -}
+921ee2e07bf16c65903fd09a8a6073ad
+  emptyKnapsack27 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3#) -}
+30f77eb10f154babb2133e292a57a11f
+  emptyKnapsack28 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 13#) -}
+bc45446015c771d69c0bfe3c50f2f735
+  emptyKnapsack29 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack31 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack30
+                   KnapsackSpec.emptyKnapsack23) -}
+5e9d0be87abe7442251e1ed727040e48
+  emptyKnapsack3 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack45
+                   KnapsackSpec.emptyKnapsack4) -}
+0d5d21b4c957b2d1fef3dcba1ec3bcc6
+  emptyKnapsack30 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 8#) -}
+eed61e30152724cf4094f7e86b0099ed
+  emptyKnapsack31 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 12#) -}
+8e835fb0a28331aae2244e7127936f9a
+  emptyKnapsack32 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack34 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack26
+                   KnapsackSpec.emptyKnapsack33) -}
+78620b26d9186e6af4bb723937f8e4c2
+  emptyKnapsack33 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 2#) -}
+e948a6de6169b50517683ffb35220386
+  emptyKnapsack34 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 11#) -}
+b0d860791faa7baf1ca24ef6bf5d3593
+  emptyKnapsack35 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack36 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack18
+                   KnapsackSpec.emptyKnapsack27) -}
+264d5df6126eaab1cb7eea3171cbeef4
+  emptyKnapsack36 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10#) -}
+1ba17784d0d7116c5b8c5cbc69ccf395
+  emptyKnapsack37 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack22 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack26
+                   KnapsackSpec.emptyKnapsack27) -}
+764b919af01e367f73523b8abf4d1a85
+  emptyKnapsack38 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack30 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack30
+                   KnapsackSpec.emptyKnapsack18) -}
+a2983059f16aac23d5a3b8e44d5d5d00
+  emptyKnapsack39 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack18 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack22
+                   KnapsackSpec.emptyKnapsack27) -}
+f8638bffa900f36fb3ca67e18f2825ce
+  emptyKnapsack4 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack44
+                   KnapsackSpec.emptyKnapsack5) -}
+d8675c5bbafc4f36cd1c84de647dc77b
+  emptyKnapsack40 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack19 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack41
+                   KnapsackSpec.emptyKnapsack22) -}
+115488d265a7f11cb6f4018fa81155c6
+  emptyKnapsack41 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 5#) -}
+1dc0cf8f2f75abb7622f05b3b007a53f
+  emptyKnapsack42 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack41 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack23
+                   KnapsackSpec.emptyKnapsack23) -}
+6848517d726bd0d90fc170192396b296
+  emptyKnapsack43 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack23 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack27
+                   KnapsackSpec.emptyKnapsack18) -}
+83f7b36fc7ceb2c22a0d66fdbc00cd78
+  emptyKnapsack44 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack27 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack33
+                   KnapsackSpec.emptyKnapsack26) -}
+c19d5011ffb94c1b5f62f764d33b956b
+  emptyKnapsack45 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack33 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack23
+                   KnapsackSpec.emptyKnapsack30) -}
+8e968d7ffa5809af1194a9dace60aabd
+  emptyKnapsack46 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack26 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.False
+                   KnapsackSpec.emptyKnapsack41
+                   KnapsackSpec.emptyKnapsack41) -}
+0e944a481c83da02385abd54f734cb11
+  emptyKnapsack47 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0#) -}
+54aff1321733a5099c3a08cdf2df9018
+  emptyKnapsack48 ::
+    GHC.Types.SPEC
+    -> (Data.Vector.Generic.Base.Mutable
+          Data.Vector.Vector
+          (Control.Monad.Primitive.PrimState (GHC.ST.ST GHC.Prim.RealWorld))
+          Knapsack.Element,
+        GHC.Types.Int)
+    -> [Knapsack.Element]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Data.Vector.Generic.Base.Mutable
+             Data.Vector.Vector
+             (Control.Monad.Primitive.PrimState (GHC.ST.ST GHC.Prim.RealWorld))
+             Knapsack.Element,
+           GHC.Types.Int) #)
+  {- Arity: 4, Strictness: <S,1*U><L,U(U(U,U,U),U(U))><S,1*U><S,U> -}
+ee939230207a76c91f345db3c69d94b0
+  emptyKnapsack5 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack43
+                   KnapsackSpec.emptyKnapsack6) -}
+2210cfe641f6dbc2bf6df39edf3199dc
+  emptyKnapsack6 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack42
+                   KnapsackSpec.emptyKnapsack7) -}
+a3ac628edea51dfd8ce1bfbc1a45e5d9
+  emptyKnapsack7 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack40
+                   KnapsackSpec.emptyKnapsack8) -}
+cb4f82f8c3a67a2dda1adfd4b24ff3b1
+  emptyKnapsack8 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack39
+                   KnapsackSpec.emptyKnapsack9) -}
+ae9d0888999357e1a1e134c84752709b
+  emptyKnapsack9 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack38
+                   KnapsackSpec.emptyKnapsack10) -}
+115de4d56ba006b90b8163ec90975ed1
+  exampleKnapsack :: Genetic.Genome Knapsack.Element
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ (Data.Vector.Vector Knapsack.Element)
+                        KnapsackSpec.exampleKnapsack1 of ds1 { (#,#) ipv1 ipv2 ->
+                 ipv2 }) -}
+e7d3fc6a9a5af1bc425c2ffd012fded5
+  exampleKnapsack1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Vector.Vector Knapsack.Element #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newArray#
+                        @ Knapsack.Element
+                        @ (Control.Monad.Primitive.PrimState
+                             (GHC.ST.ST GHC.Prim.RealWorld))
+                        0#
+                        (Data.Vector.Mutable.uninitialised @ Knapsack.Element)
+                        s1
+                          `cast`
+                        (GHC.Prim.State#
+                           (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                     <GHC.Prim.RealWorld>_N)))_R of ds1 { (#,#) ipv ipv1 ->
+                 case KnapsackSpec.exampleKnapsack17
+                        GHC.Types.SPEC
+                        ((Data.Vector.Mutable.MVector
+                            @ (Control.Monad.Primitive.PrimState
+                                 (GHC.ST.ST GHC.Prim.RealWorld))
+                            @ Knapsack.Element
+                            0#
+                            0#
+                            ipv1)
+                           `cast`
+                         (Sub (Sym (Data.Vector.D:R:MutableVector[0])) <Control.Monad.Primitive.PrimState
+                                                                          (GHC.ST.ST
+                                                                             GHC.Prim.RealWorld)>_N <Knapsack.Element>_N),
+                         KnapsackSpec.emptyKnapsack47)
+                        KnapsackSpec.exampleKnapsack2
+                        ipv
+                          `cast`
+                        (GHC.Prim.State#
+                           (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                <GHC.Prim.RealWorld>_N))_R of ds2 { (#,#) ipv6 ipv7 ->
+                 case ipv7 of wild5 { (,) v' n ->
+                 case v'
+                        `cast`
+                      (Sub (Data.Vector.D:R:MutableVector[0]) <Control.Monad.Primitive.PrimState
+                                                                 (GHC.ST.ST
+                                                                    GHC.Prim.RealWorld)>_N <Knapsack.Element>_N) of wild { Data.Vector.Mutable.MVector dt dt1 dt2 ->
+                 case n of dt5 { GHC.Types.I# dt6 ->
+                 case GHC.Prim.unsafeFreezeArray#
+                        @ (Control.Monad.Primitive.PrimState
+                             (GHC.ST.ST GHC.Prim.RealWorld))
+                        @ Knapsack.Element
+                        dt2
+                        ipv6
+                          `cast`
+                        (GHC.Prim.State#
+                           (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                     <GHC.Prim.RealWorld>_N)))_R of ds4 { (#,#) ipv2 ipv3 ->
+                 (# ipv2
+                      `cast`
+                    (GHC.Prim.State#
+                       (Control.Monad.Primitive.D:R:PrimStateST[0]
+                            <GHC.Prim.RealWorld>_N))_R,
+                    Data.Vector.Vector
+                      @ Knapsack.Element
+                      dt
+                      dt6
+                      ipv3 #) } } } } } }) -}
+54146e9b50c68d1a861fad8e12f6cafb
+  exampleKnapsack10 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack37
+                   KnapsackSpec.exampleKnapsack11) -}
+0d478b1ce5c1fe241d3ff7778a7678a8
+  exampleKnapsack11 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack35
+                   KnapsackSpec.exampleKnapsack12) -}
+7d1ee805a7a0aef18f6f2fd11c464bf4
+  exampleKnapsack12 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack32
+                   KnapsackSpec.exampleKnapsack13) -}
+10285784f74da7f8da68771277fbb539
+  exampleKnapsack13 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.exampleKnapsack14
+                   KnapsackSpec.emptyKnapsack14) -}
+2d1dd16339f4a0548f8bc6361e4d6680
+  exampleKnapsack14 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack31 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack30
+                   KnapsackSpec.emptyKnapsack23) -}
+2ca223adff2b8d7930574ed6156141ae
+  exampleKnapsack15 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack30 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack30
+                   KnapsackSpec.emptyKnapsack18) -}
+2b494087d64f9010d8d187db2d59f17b
+  exampleKnapsack16 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack23 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack27
+                   KnapsackSpec.emptyKnapsack18) -}
+d2f67320120e1d022509f2605f25e821
+  exampleKnapsack17 ::
+    GHC.Types.SPEC
+    -> (Data.Vector.Generic.Base.Mutable
+          Data.Vector.Vector
+          (Control.Monad.Primitive.PrimState (GHC.ST.ST GHC.Prim.RealWorld))
+          Knapsack.Element,
+        GHC.Types.Int)
+    -> [Knapsack.Element]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Data.Vector.Generic.Base.Mutable
+             Data.Vector.Vector
+             (Control.Monad.Primitive.PrimState (GHC.ST.ST GHC.Prim.RealWorld))
+             Knapsack.Element,
+           GHC.Types.Int) #)
+  {- Arity: 4, Strictness: <S,1*U><L,U(U(U,U,U),U(U))><S,1*U><S,U> -}
+e48295edf89fd74411bae79083cbff5b
+  exampleKnapsack2 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack46
+                   KnapsackSpec.exampleKnapsack3) -}
+87db01076f914c7d3659ced20bea6e95
+  exampleKnapsack3 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack45
+                   KnapsackSpec.exampleKnapsack4) -}
+ca09e3a10663ab2e3a6510dd5d15f4d4
+  exampleKnapsack4 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack44
+                   KnapsackSpec.exampleKnapsack5) -}
+b80cb631107fcd6b52c09ff989367aa9
+  exampleKnapsack5 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.exampleKnapsack16
+                   KnapsackSpec.exampleKnapsack6) -}
+021d463737e48925bf2e5ca65b43d4f0
+  exampleKnapsack6 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack42
+                   KnapsackSpec.exampleKnapsack7) -}
+a98330322a8a759d43b5aece88243649
+  exampleKnapsack7 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack40
+                   KnapsackSpec.exampleKnapsack8) -}
+7f1a91200604eb825c9b4d6692549cc9
+  exampleKnapsack8 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack39
+                   KnapsackSpec.exampleKnapsack9) -}
+b9a44d4d735766c9649626190ba8bec6
+  exampleKnapsack9 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.exampleKnapsack15
+                   KnapsackSpec.exampleKnapsack10) -}
+52653baf286a261746ca59cd0f6318ee
+  overFilledKnapsack :: Genetic.Genome Knapsack.Element
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ (Data.Vector.Vector Knapsack.Element)
+                        KnapsackSpec.overFilledKnapsack1 of ds1 { (#,#) ipv1 ipv2 ->
+                 ipv2 }) -}
+2a4d677eb4a29830f881d7cdb51c1164
+  overFilledKnapsack1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Vector.Vector Knapsack.Element #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newArray#
+                        @ Knapsack.Element
+                        @ (Control.Monad.Primitive.PrimState
+                             (GHC.ST.ST GHC.Prim.RealWorld))
+                        0#
+                        (Data.Vector.Mutable.uninitialised @ Knapsack.Element)
+                        s1
+                          `cast`
+                        (GHC.Prim.State#
+                           (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                     <GHC.Prim.RealWorld>_N)))_R of ds1 { (#,#) ipv ipv1 ->
+                 case KnapsackSpec.overFilledKnapsack23
+                        GHC.Types.SPEC
+                        ((Data.Vector.Mutable.MVector
+                            @ (Control.Monad.Primitive.PrimState
+                                 (GHC.ST.ST GHC.Prim.RealWorld))
+                            @ Knapsack.Element
+                            0#
+                            0#
+                            ipv1)
+                           `cast`
+                         (Sub (Sym (Data.Vector.D:R:MutableVector[0])) <Control.Monad.Primitive.PrimState
+                                                                          (GHC.ST.ST
+                                                                             GHC.Prim.RealWorld)>_N <Knapsack.Element>_N),
+                         KnapsackSpec.emptyKnapsack47)
+                        KnapsackSpec.overFilledKnapsack2
+                        ipv
+                          `cast`
+                        (GHC.Prim.State#
+                           (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                <GHC.Prim.RealWorld>_N))_R of ds2 { (#,#) ipv6 ipv7 ->
+                 case ipv7 of wild5 { (,) v' n ->
+                 case v'
+                        `cast`
+                      (Sub (Data.Vector.D:R:MutableVector[0]) <Control.Monad.Primitive.PrimState
+                                                                 (GHC.ST.ST
+                                                                    GHC.Prim.RealWorld)>_N <Knapsack.Element>_N) of wild { Data.Vector.Mutable.MVector dt dt1 dt2 ->
+                 case n of dt5 { GHC.Types.I# dt6 ->
+                 case GHC.Prim.unsafeFreezeArray#
+                        @ (Control.Monad.Primitive.PrimState
+                             (GHC.ST.ST GHC.Prim.RealWorld))
+                        @ Knapsack.Element
+                        dt2
+                        ipv6
+                          `cast`
+                        (GHC.Prim.State#
+                           (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                     <GHC.Prim.RealWorld>_N)))_R of ds4 { (#,#) ipv2 ipv3 ->
+                 (# ipv2
+                      `cast`
+                    (GHC.Prim.State#
+                       (Control.Monad.Primitive.D:R:PrimStateST[0]
+                            <GHC.Prim.RealWorld>_N))_R,
+                    Data.Vector.Vector
+                      @ Knapsack.Element
+                      dt
+                      dt6
+                      ipv3 #) } } } } } }) -}
+930c1b1cd1f9f07549bc44668e028dab
+  overFilledKnapsack10 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack37
+                   KnapsackSpec.overFilledKnapsack11) -}
+0ee631d911c78a5559080eef8c1fcf0c
+  overFilledKnapsack11 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.overFilledKnapsack19
+                   KnapsackSpec.overFilledKnapsack12) -}
+07f10e3aff0062d17fe6fcd505faf323
+  overFilledKnapsack12 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack32
+                   KnapsackSpec.overFilledKnapsack13) -}
+4ff6a3e3eaab3d415ec3a9868ad055ef
+  overFilledKnapsack13 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.exampleKnapsack14
+                   KnapsackSpec.overFilledKnapsack14) -}
+34fc6dbc6413636b6bae76d3ca99ab48
+  overFilledKnapsack14 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack25
+                   KnapsackSpec.overFilledKnapsack15) -}
+3aec523f26fd6308e6f365737152bdc2
+  overFilledKnapsack15 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.overFilledKnapsack18
+                   KnapsackSpec.overFilledKnapsack16) -}
+3e54e48fdd1a0a590e580fc2dd5368f6
+  overFilledKnapsack16 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.overFilledKnapsack17
+                   (GHC.Types.[] @ Knapsack.Element)) -}
+8172033ac363f39a2eb90e9513ca66b0
+  overFilledKnapsack17 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack20 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack19
+                   KnapsackSpec.emptyKnapsack18) -}
+e9098bffb6674a29ca73105d7467be1d
+  overFilledKnapsack18 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack24 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack23
+                   KnapsackSpec.emptyKnapsack22) -}
+a8577ef0de0290e1dbd8d998011ca331
+  overFilledKnapsack19 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack36 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack18
+                   KnapsackSpec.emptyKnapsack27) -}
+864af362e1ea808742022e744d713f73
+  overFilledKnapsack2 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.overFilledKnapsack22
+                   KnapsackSpec.overFilledKnapsack3) -}
+5f598dc27c6349cd3a62f9638d1600a7
+  overFilledKnapsack20 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack18 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack22
+                   KnapsackSpec.emptyKnapsack27) -}
+0d09a108c4a69e1ac52d442b2e97c23b
+  overFilledKnapsack21 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack19 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack41
+                   KnapsackSpec.emptyKnapsack22) -}
+e05595ffe7a449a75cbbc6a48cb82ff6
+  overFilledKnapsack22 :: Knapsack.Element
+  {- HasNoCafRefs,
+     Unfolding: (Knapsack.Element
+                   KnapsackSpec.emptyKnapsack26 `cast` (Sym (Knapsack.N:ElementId[0]))
+                   GHC.Types.True
+                   KnapsackSpec.emptyKnapsack41
+                   KnapsackSpec.emptyKnapsack41) -}
+3994f0be193b7dedafcca0e349fb35c4
+  overFilledKnapsack23 ::
+    GHC.Types.SPEC
+    -> (Data.Vector.Generic.Base.Mutable
+          Data.Vector.Vector
+          (Control.Monad.Primitive.PrimState (GHC.ST.ST GHC.Prim.RealWorld))
+          Knapsack.Element,
+        GHC.Types.Int)
+    -> [Knapsack.Element]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Data.Vector.Generic.Base.Mutable
+             Data.Vector.Vector
+             (Control.Monad.Primitive.PrimState (GHC.ST.ST GHC.Prim.RealWorld))
+             Knapsack.Element,
+           GHC.Types.Int) #)
+  {- Arity: 4, Strictness: <S,1*U><L,U(U(U,U,U),U(U))><S,1*U><S,U> -}
+f6d8fe68a5b3d4faafd70853e3b73ea7
+  overFilledKnapsack3 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack45
+                   KnapsackSpec.overFilledKnapsack4) -}
+8d67b0775d8744cbd6f8e203480716c4
+  overFilledKnapsack4 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack44
+                   KnapsackSpec.overFilledKnapsack5) -}
+46b11d5c544d6d8d70767944ca6b229e
+  overFilledKnapsack5 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.exampleKnapsack16
+                   KnapsackSpec.overFilledKnapsack6) -}
+a6fe4e8220a2004c51c90f2c81deb0e4
+  overFilledKnapsack6 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.emptyKnapsack42
+                   KnapsackSpec.overFilledKnapsack7) -}
+bfdcafae050b57c6b54cceead57d7b0c
+  overFilledKnapsack7 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.overFilledKnapsack21
+                   KnapsackSpec.overFilledKnapsack8) -}
+d9055a893df9476cbc54101d6aa20e2f
+  overFilledKnapsack8 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.overFilledKnapsack20
+                   KnapsackSpec.overFilledKnapsack9) -}
+dbe364336e62b7deb8f373a498a081c3
+  overFilledKnapsack9 :: [Knapsack.Element]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Knapsack.Element
+                   KnapsackSpec.exampleKnapsack15
+                   KnapsackSpec.overFilledKnapsack10) -}
+1f1b096301e587e9d485b5e40adbfcb5
+  spec :: Test.Hspec.Core.Spec.Monad.Spec
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                KnapsackSpec.spec1
+                  `cast`
+                (Trans
+                     (Sym (GHC.Types.N:IO[0]
+                               <((), [Test.Hspec.Core.Tree.SpecTree ()])>_R))
+                     (Trans
+                          (Sym (Control.Monad.Trans.Writer.Lazy.N:WriterT[0]
+                                    <[Test.Hspec.Core.Tree.SpecTree ()]>_N <GHC.Types.IO>_R <()>_N))
+                          (Sym (Test.Hspec.Core.Spec.Monad.N:SpecM[0] <()>_N) <()>_N))) -}
+3d35e6b11db7ed47a1543ee8b3041497
+  spec1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), [Test.Hspec.Core.Tree.SpecTree ()]) #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s, KnapsackSpec.spec2 #)) -}
+da40dea1e0766095430acab2c6d62b8f
+  spec10 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (KnapsackSpec.spec24
+                         (GHC.Types.[] @ GHC.Types.Char)
+                         GHC.Types.True
+                         KnapsackSpec.spec23)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (KnapsackSpec.spec12
+                    (GHC.Types.[] @ GHC.Types.Char)
+                    GHC.Types.False
+                    KnapsackSpec.spec11)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv }) -}
+62ce3d5094f45a8a0821f441c6da3a43
+  spec11 :: GHC.Types.Bool
+  {- Unfolding: (case KnapsackSpec.overFilledKnapsack of ww { Data.Vector.Vector ww1 ww2 ww3 ->
+                 Knapsack.$wknapsackIsUnderFilled ww1 ww2 ww3 }) -}
+37e5b1647586be5a7ee3c82d3ba057a1
+  spec12 ::
+    GHC.Base.String
+    -> GHC.Types.Bool -> GHC.Types.Bool -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Types.Bool
+                   KnapsackSpec.spec13
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqBool
+                   GHC.Show.$fShowBool) -}
+52bc31788d577ffae0c884953bcc8396
+  spec13 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.HUnit.Base.@=?5
+                   Test.HUnit.Base.@?=1
+                   KnapsackSpec.spec14) -}
+9e2e0e5982a7bf0ca50930994141148a
+  spec14 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.Hspec.Expectations.shouldBe5
+                   Test.Hspec.Expectations.shouldBe1
+                   KnapsackSpec.spec15) -}
+f2e0a0848cd96cf420ad746ee7b0cc3d
+  spec15 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   KnapsackSpec.spec22
+                   KnapsackSpec.spec16
+                   GHC.Stack.Types.EmptyCallStack) -}
+9964c90c9330231aae20943a34231404
+  spec16 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   KnapsackSpec.spec21
+                   KnapsackSpec.spec20
+                   KnapsackSpec.spec19
+                   KnapsackSpec.spec18
+                   KnapsackSpec.emptyKnapsack28
+                   KnapsackSpec.spec18
+                   KnapsackSpec.spec17) -}
+faae9cf038b17f0c87c9d610bc03cf92
+  spec17 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 70#) -}
+5f231e7541fbe8d7352a18f01e216e32
+  spec18 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 18#) -}
+1d57e73f3567f84c739df0aabb64b984
+  spec19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "test/KnapsackSpec.hs"#) -}
+32f65f44f0f09efbbfdad5531d056cff
+  spec2 :: ((), [Test.Hspec.Core.Tree.SpecTree ()])
+  {- Unfolding: ((GHC.Tuple.(), KnapsackSpec.spec3)) -}
+733777acb299fc221392144d3af8ceaf
+  spec20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "KnapsackSpec"#) -}
+61012cf1609e3b720d9434688151e4ef
+  spec21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "main"#) -}
+8165a1bb7c2a8b74eaafd693c85b2aee
+  spec22 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "shouldBe"#) -}
+e54460c5390f146dae46b2813bc79fa6
+  spec23 :: GHC.Types.Bool
+  {- Unfolding: (case KnapsackSpec.exampleKnapsack of ww { Data.Vector.Vector ww1 ww2 ww3 ->
+                 Knapsack.$wknapsackIsUnderFilled ww1 ww2 ww3 }) -}
+68aafb08d14702306c0059731f0da980
+  spec24 ::
+    GHC.Base.String
+    -> GHC.Types.Bool -> GHC.Types.Bool -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Types.Bool
+                   KnapsackSpec.spec25
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqBool
+                   GHC.Show.$fShowBool) -}
+072157c26ab2a35aaf8e648a1672b331
+  spec25 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.HUnit.Base.@=?5
+                   Test.HUnit.Base.@?=1
+                   KnapsackSpec.spec26) -}
+d60f23debca796fa54a22ff6771dcf95
+  spec26 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.Hspec.Expectations.shouldBe5
+                   Test.Hspec.Expectations.shouldBe1
+                   KnapsackSpec.spec27) -}
+39367be68cc863cae5fafa4058602a49
+  spec27 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   KnapsackSpec.spec22
+                   KnapsackSpec.spec28
+                   GHC.Stack.Types.EmptyCallStack) -}
+4a0940b8187044f335f49bc883f05fa9
+  spec28 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   KnapsackSpec.spec21
+                   KnapsackSpec.spec20
+                   KnapsackSpec.spec19
+                   KnapsackSpec.spec30
+                   KnapsackSpec.emptyKnapsack28
+                   KnapsackSpec.spec30
+                   KnapsackSpec.spec29) -}
+9104692be01b9a7c2ce9327b651f5848
+  spec29 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 66#) -}
+9bd662671f8749b1f7661a426c6a3413
+  spec3 ::
+    [Test.Hspec.Core.Tree.Tree
+       (Test.Hspec.Core.Example.ActionWith ())
+       (Test.Hspec.Core.Tree.Item ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Test.Hspec.Core.Tree.Tree
+                        (Test.Hspec.Core.Example.ActionWith ())
+                        (Test.Hspec.Core.Tree.Item ()))
+                   KnapsackSpec.spec47
+                   KnapsackSpec.spec4) -}
+a71eab6591e765a6bea9fcb91fc62797
+  spec30 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 17#) -}
+4989017d482f6856d80ed13efd4a70bb
+  spec31 :: GHC.Base.Maybe Test.Hspec.Core.Example.Location
+  {- Unfolding: (case GHC.List.reverse1
+                        @ (GHC.Base.String, GHC.Stack.Types.SrcLoc)
+                        KnapsackSpec.spec32
+                        (GHC.Types.[]
+                           @ (GHC.Base.String, GHC.Stack.Types.SrcLoc)) of wild {
+                   [] -> GHC.Base.Nothing @ Test.Hspec.Core.Example.Location
+                   : ds ds1
+                   -> case ds of wild2 { (,) ds2 loc ->
+                      GHC.Base.Just
+                        @ Test.Hspec.Core.Example.Location
+                        (Test.Hspec.Core.Example.Location
+                           (case loc of wild1 { GHC.Stack.Types.SrcLoc ds4 ds5 ds3 ds6 ds7 ds8 ds9 ->
+                            ds3 })
+                           (case loc of wild1 { GHC.Stack.Types.SrcLoc ds4 ds5 ds3 ds6 ds7 ds8 ds9 ->
+                            ds6 })
+                           (case loc of wild1 { GHC.Stack.Types.SrcLoc ds4 ds5 ds3 ds6 ds7 ds8 ds9 ->
+                            ds7 })
+                           Test.Hspec.Core.Example.ExactLocation) } }) -}
+501f95043d8fa315082504c6951c7308
+  spec32 :: [([GHC.Types.Char], GHC.Stack.Types.SrcLoc)]
+  {- Unfolding: (Data.CallStack.$wunsafeDrop
+                   @ ([GHC.Types.Char], GHC.Stack.Types.SrcLoc)
+                   1#
+                   KnapsackSpec.spec33) -}
+1a07fb561648e96f89735de8f928775a
+  spec33 :: [([GHC.Types.Char], GHC.Stack.Types.SrcLoc)]
+  {- Unfolding: (GHC.Stack.Types.getCallStack KnapsackSpec.spec34) -}
+2d04ac6807a3e25a9f812f258ff431df
+  spec34 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.Hspec.Core.Tree.specItem9
+                   Test.Hspec.Core.Tree.specItem2
+                   KnapsackSpec.spec35) -}
+d5cceb138a507d7e9416d187f3896031
+  spec35 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.Hspec.Core.Spec.it9
+                   Test.Hspec.Core.Spec.it2
+                   KnapsackSpec.spec36) -}
+628d32ed15f2dc274bde800b1130c598
+  spec36 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   KnapsackSpec.spec40
+                   KnapsackSpec.spec37
+                   GHC.Stack.Types.EmptyCallStack) -}
+63d6e6888e34957d334d92bbcdb07057
+  spec37 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   KnapsackSpec.spec21
+                   KnapsackSpec.spec20
+                   KnapsackSpec.spec19
+                   KnapsackSpec.spec39
+                   KnapsackSpec.emptyKnapsack22
+                   KnapsackSpec.spec39
+                   KnapsackSpec.spec38) -}
+02635aae6fbb7d5e156f82b1492a5401
+  spec38 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 49#) -}
+ce76a0d26d5ccbe3661e0524931824ea
+  spec39 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 16#) -}
+8057f8521aa56011ab4238fc71e32ea9
+  spec4 ::
+    [Test.Hspec.Core.Tree.Tree
+       (Test.Hspec.Core.Example.ActionWith ())
+       (Test.Hspec.Core.Tree.Item ())]
+  {- Unfolding: (GHC.Types.:
+                   @ (Test.Hspec.Core.Tree.Tree
+                        (Test.Hspec.Core.Example.ActionWith ())
+                        (Test.Hspec.Core.Tree.Item ()))
+                   KnapsackSpec.spec5
+                   (GHC.Types.[]
+                      @ (Test.Hspec.Core.Tree.Tree
+                           (Test.Hspec.Core.Example.ActionWith ())
+                           (Test.Hspec.Core.Tree.Item ())))) -}
+de9c321072582dc20a0ca785f10e4678
+  spec40 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "it"#) -}
+25e69aeaa4594abe5389a350c6a17b1b
+  spec41 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   KnapsackSpec.spec43
+                   KnapsackSpec.spec42) -}
+f2dda546468f402f68949a582cb2bb2c
+  spec42 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "ells if a knapsack is under filled"#) -}
+9c24551564c81653826e15a530402f50
+  spec43 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# 't'#) -}
+de51bd34c9e1b7be095ab6612a81b8a1
+  spec44 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   KnapsackSpec.spec46
+                   KnapsackSpec.spec45) -}
+3af1a240ca777872963a4ebc14386daa
+  spec45 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "napsackIsUnderFilled"#) -}
+c7895ef19e400fbc99224d9bde444b25
+  spec46 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# 'k'#) -}
+7d492b8a38b7f8727ac4d65f6392bb55
+  spec47 ::
+    Test.Hspec.Core.Tree.Tree
+      (Test.Hspec.Core.Example.ActionWith ())
+      (Test.Hspec.Core.Tree.Item ())
+  {- Unfolding: (Test.Hspec.Core.Tree.Node
+                   @ (Test.Hspec.Core.Example.ActionWith ())
+                   @ (Test.Hspec.Core.Tree.Item ())
+                   KnapsackSpec.spec80
+                   KnapsackSpec.spec48
+                     `cast`
+                   ([(Test.Hspec.Core.Tree.Tree
+                        (Sub (Test.Hspec.Core.Example.D:R:ArgIO[0])
+                         ->_R <GHC.Types.IO ()>_R)
+                        (Test.Hspec.Core.Tree.Item
+                           (Sub (Test.Hspec.Core.Example.D:R:ArgIO[0])))_R)_R])_R) -}
+2dc792926614bc4e87890f3aa3510024
+  spec48 ::
+    [Test.Hspec.Core.Tree.SpecTree
+       (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))]
+  {- Unfolding: (GHC.Types.:
+                   @ (Test.Hspec.Core.Tree.SpecTree
+                        (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+                   KnapsackSpec.spec49
+                   (GHC.Types.[]
+                      @ (Test.Hspec.Core.Tree.SpecTree
+                           (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))))) -}
+4dd348ed039b0b8d2dd13e14ec45d06e
+  spec49 ::
+    Test.Hspec.Core.Tree.Tree
+      (Test.Hspec.Core.Example.ActionWith
+         (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+      (Test.Hspec.Core.Tree.Item
+         (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+  {- Unfolding: (Test.Hspec.Core.Tree.Leaf
+                   @ (Test.Hspec.Core.Example.ActionWith
+                        (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+                   @ (Test.Hspec.Core.Tree.Item
+                        (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+                   KnapsackSpec.spec50) -}
+cdc6a1a6cd8b08e83c043f05c6833e92
+  spec5 ::
+    Test.Hspec.Core.Tree.Tree
+      (Test.Hspec.Core.Example.ActionWith ())
+      (Test.Hspec.Core.Tree.Item ())
+  {- Unfolding: (Test.Hspec.Core.Tree.Node
+                   @ (Test.Hspec.Core.Example.ActionWith ())
+                   @ (Test.Hspec.Core.Tree.Item ())
+                   KnapsackSpec.spec44
+                   KnapsackSpec.spec6
+                     `cast`
+                   ([(Test.Hspec.Core.Tree.Tree
+                        (Sub (Test.Hspec.Core.Example.D:R:ArgIO[0])
+                         ->_R <GHC.Types.IO ()>_R)
+                        (Test.Hspec.Core.Tree.Item
+                           (Sub (Test.Hspec.Core.Example.D:R:ArgIO[0])))_R)_R])_R) -}
+dad2444fb6ea494996ea121a5ff03624
+  spec50 ::
+    Test.Hspec.Core.Tree.Item
+      (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))
+  {- Unfolding: (Test.Hspec.Core.Tree.Item
+                   @ (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))
+                   KnapsackSpec.spec77
+                   KnapsackSpec.spec69
+                   GHC.Types.False
+                   KnapsackSpec.spec51
+                     `cast`
+                   (<Test.Hspec.Core.Example.Params>_R
+                    ->_R <Test.Hspec.Core.Example.ActionWith
+                            (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))
+                          -> GHC.Types.IO ()>_R
+                    ->_R <Test.Hspec.Core.Example.ProgressCallback>_R
+                    ->_R Sym (GHC.Types.N:IO[0]
+                                  <Data.Either.Either
+                                     GHC.Exception.SomeException
+                                     Test.Hspec.Core.Example.Result>_R))) -}
+6a8f86de8bdb6d2db5839b00006b8e00
+  spec51 ::
+    Test.Hspec.Core.Example.Params
+    -> (Test.Hspec.Core.Example.ActionWith
+          (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))
+        -> GHC.Types.IO ())
+    -> Test.Hspec.Core.Example.ProgressCallback
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Either.Either
+            GHC.Exception.SomeException Test.Hspec.Core.Example.Result #)
+  {- Arity: 4,
+     Unfolding: (Test.Hspec.Core.Example.safeEvaluateExample1
+                   @ (GHC.Types.IO ())
+                   Test.Hspec.Core.Example.$fExampleIO1
+                     `cast`
+                   (Trans
+                        (<Test.Hspec.Expectations.Expectation>_R
+                         ->_R <Test.Hspec.Core.Example.Params>_R
+                         ->_R ((Trans
+                                    (Sub (Test.Hspec.Core.Example.D:R:Arg(->)0[0] <()>_N))
+                                    (Sub (Sym (Test.Hspec.Core.Example.D:R:ArgIO[0])))
+                                ->_R <GHC.Types.IO ()>_R)
+                               ->_R <GHC.Types.IO ()>_R)
+                         ->_R <Test.Hspec.Core.Example.ProgressCallback>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Test.Hspec.Core.Example.Result>_R))
+                        (Sym (Test.Hspec.Core.Example.N:Example[0]
+                                  <Test.Hspec.Expectations.Expectation>_N)))
+                   KnapsackSpec.spec52 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+1bd6054b815b07e7e2c45e9dd70fd346
+  spec52 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (KnapsackSpec.spec63
+                         (GHC.Types.[] @ GHC.Types.Char)
+                         KnapsackSpec.spec62
+                         KnapsackSpec.spec61)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (KnapsackSpec.spec55
+                    (GHC.Types.[] @ GHC.Types.Char)
+                    KnapsackSpec.spec54
+                    KnapsackSpec.spec53)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv }) -}
+7ed9938fe5355667977aa2f033c75924
+  spec53 :: GHC.Types.Float
+  {- Unfolding: (case KnapsackSpec.exampleKnapsack of ww { Data.Vector.Vector ww1 ww2 ww3 ->
+                 case Knapsack.$wknapsackTotalValue ww1 ww2 ww3 of ww4 { DEFAULT ->
+                 GHC.Types.F# ww4 } }) -}
+a7360dd7593436face0679a8af99a0a0
+  spec54 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 18.0#) -}
+6f510f5541b0b2e63eaa4efabe60f1e2
+  spec55 ::
+    GHC.Base.String
+    -> GHC.Types.Float -> GHC.Types.Float -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Types.Float
+                   KnapsackSpec.spec56
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqFloat
+                   GHC.Float.$fShowFloat) -}
+e2ad9a56a74c898acbd6d7ec6bdfacb1
+  spec56 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.HUnit.Base.@=?5
+                   Test.HUnit.Base.@?=1
+                   KnapsackSpec.spec57) -}
+187a7ccc2bc78c198632fe650b3b56d5
+  spec57 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.Hspec.Expectations.shouldBe5
+                   Test.Hspec.Expectations.shouldBe1
+                   KnapsackSpec.spec58) -}
+24d4896873e20a2d8f85d8a1a8256f5c
+  spec58 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   KnapsackSpec.spec22
+                   KnapsackSpec.spec59
+                   GHC.Stack.Types.EmptyCallStack) -}
+669542ffaf25d95e59f8012dcee74093
+  spec59 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   KnapsackSpec.spec21
+                   KnapsackSpec.spec20
+                   KnapsackSpec.spec19
+                   KnapsackSpec.emptyKnapsack28
+                   KnapsackSpec.emptyKnapsack28
+                   KnapsackSpec.emptyKnapsack28
+                   KnapsackSpec.spec60) -}
+12b2592b0f5d284b8732496c6f3b8c61
+  spec6 ::
+    [Test.Hspec.Core.Tree.SpecTree
+       (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))]
+  {- Unfolding: (GHC.Types.:
+                   @ (Test.Hspec.Core.Tree.SpecTree
+                        (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+                   KnapsackSpec.spec7
+                   (GHC.Types.[]
+                      @ (Test.Hspec.Core.Tree.SpecTree
+                           (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))))) -}
+3d113e7e5ac50cfd9fe811423d9e1e95
+  spec60 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 63#) -}
+5201adf940f5c8dbc155c754457312a7
+  spec61 :: GHC.Types.Float
+  {- Unfolding: (case KnapsackSpec.emptyKnapsack of ww { Data.Vector.Vector ww1 ww2 ww3 ->
+                 case Knapsack.$wknapsackTotalValue ww1 ww2 ww3 of ww4 { DEFAULT ->
+                 GHC.Types.F# ww4 } }) -}
+33e1372f3038e2335368db363c40fdca
+  spec62 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 0.0#) -}
+1c8c676a57b808e11455cd30f5454a32
+  spec63 ::
+    GHC.Base.String
+    -> GHC.Types.Float -> GHC.Types.Float -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Types.Float
+                   KnapsackSpec.spec64
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqFloat
+                   GHC.Float.$fShowFloat) -}
+15282ed84d99ddf2e3adfb6e75a20823
+  spec64 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.HUnit.Base.@=?5
+                   Test.HUnit.Base.@?=1
+                   KnapsackSpec.spec65) -}
+4ff5e29afb5955b9bd098628418757b2
+  spec65 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.Hspec.Expectations.shouldBe5
+                   Test.Hspec.Expectations.shouldBe1
+                   KnapsackSpec.spec66) -}
+d459b86897739080881d292cb97245aa
+  spec66 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   KnapsackSpec.spec22
+                   KnapsackSpec.spec67
+                   GHC.Stack.Types.EmptyCallStack) -}
+9423183914eccb59be261f18f1b5acbd
+  spec67 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   KnapsackSpec.spec21
+                   KnapsackSpec.spec20
+                   KnapsackSpec.spec19
+                   KnapsackSpec.emptyKnapsack31
+                   KnapsackSpec.emptyKnapsack28
+                   KnapsackSpec.emptyKnapsack31
+                   KnapsackSpec.spec68) -}
+b4cd8f43a2bc42c31b6c1feaecbe3c86
+  spec68 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 60#) -}
+e260ae1f7e8d9bbd2d21869386782472
+  spec69 :: GHC.Base.Maybe Test.Hspec.Core.Example.Location
+  {- Unfolding: (case GHC.List.reverse1
+                        @ (GHC.Base.String, GHC.Stack.Types.SrcLoc)
+                        KnapsackSpec.spec70
+                        (GHC.Types.[]
+                           @ (GHC.Base.String, GHC.Stack.Types.SrcLoc)) of wild {
+                   [] -> GHC.Base.Nothing @ Test.Hspec.Core.Example.Location
+                   : ds ds1
+                   -> case ds of wild2 { (,) ds2 loc ->
+                      GHC.Base.Just
+                        @ Test.Hspec.Core.Example.Location
+                        (Test.Hspec.Core.Example.Location
+                           (GHC.Stack.Types.srcLocFile loc)
+                           (GHC.Stack.Types.srcLocStartLine loc)
+                           (GHC.Stack.Types.srcLocStartCol loc)
+                           Test.Hspec.Core.Example.ExactLocation) } }) -}
+f9db82d0590bc162bf21e0ed5b897051
+  spec7 ::
+    Test.Hspec.Core.Tree.Tree
+      (Test.Hspec.Core.Example.ActionWith
+         (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+      (Test.Hspec.Core.Tree.Item
+         (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+  {- Unfolding: (Test.Hspec.Core.Tree.Leaf
+                   @ (Test.Hspec.Core.Example.ActionWith
+                        (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+                   @ (Test.Hspec.Core.Tree.Item
+                        (Test.Hspec.Core.Example.Arg (GHC.Types.IO ())))
+                   KnapsackSpec.spec8) -}
+e0e7f3c49d4c061589dd867cb788aa42
+  spec70 :: [([GHC.Types.Char], GHC.Stack.Types.SrcLoc)]
+  {- Unfolding: (Data.CallStack.$wunsafeDrop
+                   @ ([GHC.Types.Char], GHC.Stack.Types.SrcLoc)
+                   1#
+                   KnapsackSpec.spec71) -}
+2668983c7a5b025dd0a1358de8602d0e
+  spec71 :: [([GHC.Types.Char], GHC.Stack.Types.SrcLoc)]
+  {- Unfolding: (GHC.Stack.Types.getCallStack KnapsackSpec.spec72) -}
+7dad842ac7e6a41ca4e783d2627fb0f2
+  spec72 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.Hspec.Core.Tree.specItem9
+                   Test.Hspec.Core.Tree.specItem2
+                   KnapsackSpec.spec73) -}
+6bbe8f1374ae4f3785c2cbb9ea0d0611
+  spec73 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Test.Hspec.Core.Spec.it9
+                   Test.Hspec.Core.Spec.it2
+                   KnapsackSpec.spec74) -}
+eee306f1fe49d6755c9f6b1f6a563c4d
+  spec74 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   KnapsackSpec.spec40
+                   KnapsackSpec.spec75
+                   GHC.Stack.Types.EmptyCallStack) -}
+7c56006dc46486a325fd984d2cb05901
+  spec75 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   KnapsackSpec.spec21
+                   KnapsackSpec.spec20
+                   KnapsackSpec.spec19
+                   KnapsackSpec.emptyKnapsack34
+                   KnapsackSpec.emptyKnapsack22
+                   KnapsackSpec.emptyKnapsack34
+                   KnapsackSpec.spec76) -}
+33191955ddb5c73064c6f8a40d3e0580
+  spec76 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 48#) -}
+f880248f3154e683afeb5a3564a9bdc3
+  spec77 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   KnapsackSpec.spec79
+                   KnapsackSpec.spec78) -}
+815e7124794c91c8a700d0a973ee0c54
+  spec78 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "alculates the fitness of a genome"#) -}
+1955193e897fc7469d57e0910bf4cecc
+  spec79 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# 'c'#) -}
+66b90de20ba73cb191b0cf757c68d36f
+  spec8 ::
+    Test.Hspec.Core.Tree.Item
+      (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))
+  {- Unfolding: (Test.Hspec.Core.Tree.Item
+                   @ (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))
+                   KnapsackSpec.spec41
+                   KnapsackSpec.spec31
+                   GHC.Types.False
+                   KnapsackSpec.spec9
+                     `cast`
+                   (<Test.Hspec.Core.Example.Params>_R
+                    ->_R <Test.Hspec.Core.Example.ActionWith
+                            (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))
+                          -> GHC.Types.IO ()>_R
+                    ->_R <Test.Hspec.Core.Example.ProgressCallback>_R
+                    ->_R Sym (GHC.Types.N:IO[0]
+                                  <Data.Either.Either
+                                     GHC.Exception.SomeException
+                                     Test.Hspec.Core.Example.Result>_R))) -}
+21918788a870eaac7987eff234c275e7
+  spec80 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   KnapsackSpec.spec46
+                   KnapsackSpec.spec81) -}
+9817d2234551378baf0e306a17498ca9
+  spec81 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "napsackTotalValue"#) -}
+86d9f6bf998854d9065d5954e38cca59
+  spec9 ::
+    Test.Hspec.Core.Example.Params
+    -> (Test.Hspec.Core.Example.ActionWith
+          (Test.Hspec.Core.Example.Arg (GHC.Types.IO ()))
+        -> GHC.Types.IO ())
+    -> Test.Hspec.Core.Example.ProgressCallback
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Either.Either
+            GHC.Exception.SomeException Test.Hspec.Core.Example.Result #)
+  {- Arity: 4,
+     Unfolding: (Test.Hspec.Core.Example.safeEvaluateExample1
+                   @ (GHC.Types.IO ())
+                   Test.Hspec.Core.Example.$fExampleIO1
+                     `cast`
+                   (Trans
+                        (<Test.Hspec.Expectations.Expectation>_R
+                         ->_R <Test.Hspec.Core.Example.Params>_R
+                         ->_R ((Trans
+                                    (Sub (Test.Hspec.Core.Example.D:R:Arg(->)0[0] <()>_N))
+                                    (Sub (Sym (Test.Hspec.Core.Example.D:R:ArgIO[0])))
+                                ->_R <GHC.Types.IO ()>_R)
+                               ->_R <GHC.Types.IO ()>_R)
+                         ->_R <Test.Hspec.Core.Example.ProgressCallback>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Test.Hspec.Core.Example.Result>_R))
+                        (Sym (Test.Hspec.Core.Example.N:Example[0]
+                                  <Test.Hspec.Expectations.Expectation>_N)))
+                   KnapsackSpec.spec10 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

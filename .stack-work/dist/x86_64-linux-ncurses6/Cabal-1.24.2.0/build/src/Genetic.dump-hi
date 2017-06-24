@@ -1,0 +1,304 @@
+
+==================== FINAL INTERFACE ====================
+2017-06-24 23:28:06.385356811 UTC
+
+interface genetic-0.1.0.0-4Qteo4SiaPs2YiyYDVTgEQ:Genetic 8002
+  interface hash: 5e75dc6c7ca70dfefefc0021a1a638d3
+  ABI hash: 191c5ed62dd83d3f537239e1c624156f
+  export-list hash: 1e12448d273999ab3c46da27b0f6aae0
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 90359214081c852c87cfd05bc8eb8fae
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Genetic.generationsSize
+  Genetic.populationSize
+  Genetic.selectRandomGene
+  Genetic.someFunc
+  Genetic.Elitism
+  Genetic.Gene{Genetic.disturb Genetic.fitness Genetic.isValid Genetic.rndGenome}
+  Genetic.GeneticProblem{Genetic.GeneticProblem elitism goal}
+  Genetic.Genome
+  Genetic.Goal{Genetic.Maximize Genetic.Minimize}
+  Genetic.Population
+module dependencies:
+package dependencies: MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Fusion.Bundle
+family instance modules: MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity base-4.9.1.0:Data.List.NonEmpty
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Semigroup
+                         base-4.9.1.0:Data.Type.Equality base-4.9.1.0:Data.Version
+                         base-4.9.1.0:Data.Void base-4.9.1.0:GHC.Exts
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH:Control.Monad.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector
+import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Random 1ac23f2f24d80161face0842d1be3259
+import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Random.Class 474032a918a745ee5c3722124fede5bc
+import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy a192332894fd19b0ac7067ae44e7b605
+import  -/  base-4.9.1.0:Control.Monad a6784c5dab0d75c63dabec5a37843f98
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Debug.Trace a9edf3aec504f4423d8ba829ab373a25
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:System.IO e4a64a8e3dce8616da54f0ee7104f7db
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Set 3ed2324fd1e757464a8ac2b636a64e5a
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random 08e50ea8c400b4b56120dee22f012f01
+import  -/  vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector 5a746e9670329619c461c982b12cd97b
+b388308897e169a89de9f923511b40cc
+  $tc'C:Gene :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7718362763539067446##
+                   15528446624813189319##
+                   Genetic.$trModule
+                   Genetic.$tc'C:Gene1) -}
+a11b1390c04a2c57418669774be51365
+  $tc'C:Gene1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Gene"#) -}
+3b8153f994477ffcf7f6757457fcad33
+  $tc'GeneticProblem :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   487772125690734524##
+                   3073537625397319791##
+                   Genetic.$trModule
+                   Genetic.$tc'GeneticProblem1) -}
+62c032f686a1c7e2d492282b2550ce12
+  $tc'GeneticProblem1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'GeneticProblem"#) -}
+b71e0384a98217e897f55c2162411cd0
+  $tc'Maximize :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9042398046799757174##
+                   11657630970473514066##
+                   Genetic.$trModule
+                   Genetic.$tc'Maximize1) -}
+955e526c94927e7e43adf970a5a8d863
+  $tc'Maximize1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Maximize"#) -}
+c7d051b4ee145249a2eb092a2b34c33a
+  $tc'Minimize :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7140769058127348439##
+                   10652222765246052225##
+                   Genetic.$trModule
+                   Genetic.$tc'Minimize1) -}
+b781d4ab2c922329bcaa1bcb9619cca4
+  $tc'Minimize1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Minimize"#) -}
+94ea5a7d4036edb3e182e52c78913703
+  $tcGene :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2141976804852567626##
+                   10957191072141441963##
+                   Genetic.$trModule
+                   Genetic.$tcGene1) -}
+80fedfa42f7a580addcebb040c5e80bf
+  $tcGene1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Gene"#) -}
+76d54397318d2b03aacc0fa8a3ac7a70
+  $tcGeneticProblem :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12567199989585575329##
+                   1511220342155914786##
+                   Genetic.$trModule
+                   Genetic.$tcGeneticProblem1) -}
+0e40b25b316f747f44ae95c99b1f59aa
+  $tcGeneticProblem1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "GeneticProblem"#) -}
+e051609a2040c5ae6b155f1c6cda406b
+  $tcGoal :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11085968502320914331##
+                   1122689440323153014##
+                   Genetic.$trModule
+                   Genetic.$tcGoal1) -}
+3247de95ff3a9ec3b806a4408d293cb9
+  $tcGoal1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Goal"#) -}
+24f378670f03edbd15692be8a98cc5bb
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Genetic.$trModule2
+                   Genetic.$trModule1) -}
+55da8e1c49a73be020a843a346a5fad0
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Genetic"#) -}
+537a2d8f6e1dcd9f6ebc3573f9708e93
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "genetic-0.1.0.0-4Qteo4SiaPs2YiyYDVTgEQ"#) -}
+e496c910eb0c7c44c49e4e97447e7f78
+  type Elitism = GHC.Types.Int
+051d87aceeb5984757c3afe47dd60fc9
+  class Gene a where
+    disturb :: a -> a
+    fitness :: Genetic.Genome a -> GHC.Types.Float
+    isValid :: Genetic.Genome a -> GHC.Types.Bool
+    rndGenome :: System.Random.RandomGen g =>
+                 Control.Monad.Trans.Random.Lazy.Rand g (Genetic.Genome a)
+    {-# MINIMAL disturb, fitness, isValid, rndGenome #-}
+e5d688f1d880cc5d889aad93abd51eef
+  type role GeneticProblem phantom
+  data GeneticProblem a
+    = GeneticProblem {goal :: Genetic.Goal, elitism :: Genetic.Elitism}
+09166c24f3d828e3df12b3d9bdb1a675
+  type Genome a = Data.Vector.Vector a
+f78d834520b8f2f846266bb2b98027f3
+  data Goal = Minimize | Maximize
+213116f1d3f261d734d847a28c12a3a4
+  type Population a = Data.Vector.Vector (Genetic.Genome a)
+e48db76abbecede59ae31b9483e654d7
+  elitism :: Genetic.GeneticProblem a -> Genetic.Elitism
+  RecSel Left Genetic.GeneticProblem
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U(U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: Genetic.GeneticProblem a) ->
+                 case ds of wild { Genetic.GeneticProblem ds1 ds2 -> ds2 }) -}
+d2cc52d32e2a4fc8043ec49528ff696d
+  generationsSize :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1000#) -}
+0218ec3b63125cd119b9818b3843cc01
+  goal :: Genetic.GeneticProblem a -> Genetic.Goal
+  RecSel Left Genetic.GeneticProblem
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: Genetic.GeneticProblem a) ->
+                 case ds of wild { Genetic.GeneticProblem ds1 ds2 -> ds1 }) -}
+6bbe01f13d197514be1ef08624fcbf71
+  populationSize :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 50#) -}
+9516d4ab7de5bb13e688e4ee562133cb
+  selectRandomGene ::
+    System.Random.RandomGen g =>
+    Genetic.Genome a -> Control.Monad.Trans.Random.Lazy.Rand g a
+  {- Arity: 2,
+     Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),A)><L,U(U,U,U)>,
+     Unfolding: (\ @ g
+                   @ a
+                   ($dRandomGen :: System.Random.RandomGen g)
+                   (genome :: Genetic.Genome a) ->
+                 let {
+                   lvl2 :: GHC.Types.Int
+                   = Data.Vector.Generic.length
+                       @ Data.Vector.Vector
+                       @ a
+                       (Data.Vector.$fVectorVectora @ a)
+                       genome
+                 } in
+                 let {
+                   w1 :: GHC.Integer.Type.Integer
+                   = case lvl2 of wild { GHC.Types.I# x ->
+                     GHC.Integer.Type.smallInteger (GHC.Prim.-# x 1#) }
+                 } in
+                 (\ (eta2 :: g) ->
+                  let {
+                    ds :: (GHC.Types.Int, g)
+                    = case System.Random.$wrandomIvalInteger
+                             @ g
+                             @ GHC.Types.Int
+                             $dRandomGen
+                             GHC.Num.$fNumInt
+                             Genetic.selectRandomGene_w2
+                             w1
+                             eta2 of ww2 { (#,#) ww3 ww4 ->
+                      (ww3, ww4) }
+                  } in
+                  (case ds of wild { (,) a1 s' ->
+                   case a1 of wild1 { GHC.Types.I# x ->
+                   case GHC.Prim.tagToEnum#
+                          @ GHC.Types.Bool
+                          (GHC.Prim.>=# x 0#) of wild2 {
+                     GHC.Types.False
+                     -> case lvl2 of wild3 { GHC.Types.I# n# ->
+                        Genetic.selectRandomGene1 @ a n# x }
+                     GHC.Types.True
+                     -> case lvl2 of wild3 { GHC.Types.I# y ->
+                        case GHC.Prim.tagToEnum#
+                               @ GHC.Types.Bool
+                               (GHC.Prim.<# x y) of wild4 {
+                          GHC.Types.False -> Genetic.selectRandomGene1 @ a y x
+                          GHC.Types.True
+                          -> case genome of wild5 { Data.Vector.Vector dt dt1 dt2 ->
+                             case GHC.Prim.indexArray#
+                                    @ a
+                                    dt2
+                                    (GHC.Prim.+# dt x) of ds2 { Unit# ipv ->
+                             ipv } } } } } } },
+                   case ds of wild { (,) a1 s' -> s' })
+                    `cast`
+                  (Sym (Data.Functor.Identity.N:Identity[0] <(a, g)>_R)))
+                   `cast`
+                 (Trans
+                      (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                <g>_N <Data.Functor.Identity.Identity>_R <a>_N))
+                      (Sym (Control.Monad.Trans.Random.Lazy.N:RandT[0]) <g>_N <Data.Functor.Identity.Identity>_N <a>_N))) -}
+3293ef56b246f7977a9bd5aa3937b605
+  selectRandomGene1 :: GHC.Prim.Int# -> GHC.Prim.Int# -> a
+  {- Arity: 2, Strictness: <L,U><L,U>x -}
+bb73d67ca2f90ff01cfe7d108afbdfb6
+  selectRandomGene_w2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+b505dcde7289ae2df165eedbe998c329
+  someFunc :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Genetic.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+45ad5679f9cefd224d007515f8ffc6ae
+  someFunc1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Genetic.someFunc2
+                   GHC.Types.True
+                   eta) -}
+dcd9bb2dd52debe9adefffde59b0d89f
+  someFunc2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "someFunc"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
