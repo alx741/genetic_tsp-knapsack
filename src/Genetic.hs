@@ -20,9 +20,9 @@ data GeneticProblem a = GeneticProblem
     }
 
 class Ord a => Gene a where
-    disturb :: a -> a
     fitness :: Genome a -> Float
     isValid :: Genome a -> Bool
+    mutate :: (RandomGen g) => Genome a -> Rand g (Genome a)
     rndGenome :: (RandomGen g) => Rand g (Genome a)
 
 generationsSize :: Int
@@ -34,10 +34,10 @@ populationSize = 50
 generatePopulation :: (RandomGen g, Gene a) => Int -> Rand g (Population a)
 generatePopulation n = replicateM n rndGenome >>= return . V.fromList
 
-solution :: (RandomGen g, Gene a)
+solve :: (RandomGen g, Gene a)
     => GeneticProblem a
     -> Rand g Float
-solution p = do
+solve p = do
     population <- generatePopulation populationSize
     lastGeneration <- nthGeneration p generationsSize population
     return $ best p lastGeneration
@@ -97,9 +97,9 @@ crossover g1 g2 = do
         cross = g1' V.++ g2'
     if isValid cross then return cross else mutate g2 >>= crossover g1
 
-mutate :: (RandomGen g, Gene a) => Genome a -> Rand g (Genome a)
-mutate genome = do
-    rndIndex <- getRandomR (0, (V.length genome) - 1)
-    let rndGene = genome V.! rndIndex
-    let mutant = genome V.// [(rndIndex, disturb rndGene)]
-    if isValid mutant then return mutant else mutate genome
+-- mutate :: (RandomGen g, Gene a) => Genome a -> Rand g (Genome a)
+-- mutate genome = do
+--     rndIndex <- getRandomR (0, (V.length genome) - 1)
+--     let rndGene = genome V.! rndIndex
+--     let mutant = genome V.// [(rndIndex, disturb rndGene)]
+--     if isValid mutant then return mutant else mutate genome

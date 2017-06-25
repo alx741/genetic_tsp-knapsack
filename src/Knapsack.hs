@@ -33,16 +33,20 @@ instance Show Element where
             ++ "\n\tWeight: " ++ show w ++ "\n\tValue: " ++ show v ++ "\n"
 
 instance Gene Element where
-    disturb = knapsackSwap
     fitness = knapsackTotalValue
     isValid = knapsackIsUnderFilled
+    mutate = knapsackMutate
     rndGenome = knapsackRndSol
 
 knapsackProblem :: GeneticProblem Element
 knapsackProblem = GeneticProblem Maximize 1
 
-knapsackSwap :: Element -> Element
-knapsackSwap (Element eid selected w v) = Element eid (not selected) w v
+knapsackMutate :: (RandomGen g) => Genome Element -> Rand g (Genome Element)
+knapsackMutate genome = do
+    rndIndex <- getRandomR (0, (V.length genome) - 1)
+    let rndGene = genome V.! rndIndex
+    let mutant = genome V.// [(rndIndex, knapsackSwap rndGene)]
+    if isValid mutant then return mutant else mutate genome
 
 knapsackTotalValue :: Genome Element -> Float
 knapsackTotalValue genome = fromIntegral $ totalValue genome
@@ -62,7 +66,12 @@ knapsackRndSol = do
     where
         flipRandom e = do
             bool <- getRandom
-            if bool then return $ disturb e else return $ e
+            if bool then return $ knapsackSwap e else return $ e
+
+knapsackSwap :: Element -> Element
+knapsackSwap (Element eid selected w v) = Element eid (not selected) w v
+
+
 
 -- Total Weight = 70
 -- Total Value = 73

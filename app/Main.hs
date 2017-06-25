@@ -8,8 +8,8 @@ import Data.Set as S
 
 main :: IO ()
 main = do
-    -- sol <- evalRandIO $ trace "solving" (Genetic.solution knapsackProblem)
-    -- print sol
+    sol <- evalRandIO $ solve knapsackProblem
+    print sol
 
     -- Test population generation
     -- pop <- (evalRandIO $ generatePopulation 50) :: IO (Population Element)
@@ -42,7 +42,3 @@ main = do
     -- gen <- evalRandIO $ generation knapsackProblem pop
     -- print $ sum $ fmap knapsackTotalValue pop
     -- print $ sum $ fmap knapsackTotalValue gen
-
-    -- Test all
-    sol <- evalRandIO $ solution knapsackProblem
-    print sol
