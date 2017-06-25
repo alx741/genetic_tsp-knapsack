@@ -37,28 +37,26 @@ instance Gene Element where
     disturb = knapsackSwap
     fitness = knapsackTotalValue
     isValid = knapsackIsUnderFilled
-    rndGenome = knapsackRndGenome
+    rndGenome = knapsackRndSol
 
 knapsackSwap :: Element -> Element
 knapsackSwap (Element eid selected w v) = Element eid (not selected) w v
 
 knapsackTotalValue :: Genome Element -> Float
 knapsackTotalValue genome = fromIntegral $ totalValue genome
-    where
-        totalValue gen = V.foldl'
-            (\i g -> if selected g then i + value g else i) 0 gen
+    where totalValue gen =
+            V.foldl' (\i g -> if selected g then i + value g else i) 0 gen
 
 knapsackIsUnderFilled :: Genome Element -> Bool
 knapsackIsUnderFilled genome = totalWeight genome <= knapsackSize
-    where
-        totalWeight gen = V.foldl' (\i g -> if selected g then i + weight g else i) 0 gen
+    where totalWeight gen =
+            V.foldl' (\i g -> if selected g then i + weight g else i) 0 gen
 
-knapsackRndGenome :: (RandomGen g) => Rand g (Genome Element)
-knapsackRndGenome = do
-    -- rndElements <- trace "rndgenome" (mapM flipRandom elements)
+knapsackRndSol :: (RandomGen g) => Rand g (Genome Element)
+knapsackRndSol = do
     rndElements <- mapM flipRandom elements
-    return $ V.fromList rndElements
-    -- TODO: Assert genomes are valid
+    let genome = V.fromList rndElements
+    if isValid genome then return genome else knapsackRndSol
     where
         flipRandom e = do
             bool <- getRandom
@@ -66,16 +64,6 @@ knapsackRndGenome = do
 
 -- knapsackProblem :: Problem Element
 -- knapsackProblem = Problem 5 knapsackFitness knapsackIsValid knapsackDisturb
-
--- instance RndGenome Element where
---     getRandomGenome = do
---         -- rndElements <- trace "rndgenome" (mapM flipRandom elements)
---         rndElements <- mapM flipRandom elements
---         return $ S.fromList rndElements
---         where
---             flipRandom e = do
---                 bool <- getRandom
---                 if bool then return $ knapsackDisturb e else return $ e
 
 -- Total Weight = 70
 -- Total Value = 73
