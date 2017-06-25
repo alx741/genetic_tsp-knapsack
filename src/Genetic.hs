@@ -39,6 +39,42 @@ class Ord a => Gene a where
 generatePopulation :: (RandomGen g, Gene a) => Int -> Rand g (Population a)
 generatePopulation n = replicateM n rndGenome >>= return . V.fromList
 
+solution :: (RandomGen g, Gene a)
+    => GeneticProblem a
+    -> Rand g Float
+solution p = do
+    population <- generatePopulation populationSize
+    lastGeneration <- nthGeneration p generationsSize population
+    return $ best p lastGeneration
+    where
+        best (GeneticProblem Maximize _) p =  V.maximum $ fmap fitness p
+        best (GeneticProblem Minimize _) p =  V.minimum $ fmap fitness p
+
+generation :: (RandomGen g, Gene a)
+    => GeneticProblem a
+    -> Population a
+    -> Rand g (Population a)
+generation pro@(GeneticProblem _ n) p = do
+    let elitePopulation = V.take n p
+    children <- V.replicateM m $ getChild pro p
+    return $ elitePopulation V.++ children
+    where
+        m = (V.length p) - n
+        getChild pro p = do
+            p1 <- tournament pro p
+            p2 <- tournament pro p
+            mating p1 p2
+
+nthGeneration :: (RandomGen g, Gene a)
+    => GeneticProblem a
+    -> Int
+    -> Population a
+    -> Rand g (Population a)
+nthGeneration _ 0 p = return p
+nthGeneration pro n p = do
+    gen <- generation pro p
+    nthGeneration pro (n-1) gen
+
 tournament :: (RandomGen g, Gene a)
     => GeneticProblem a
     -> Population a
@@ -95,54 +131,6 @@ mutate genome = do
 
 -- instance RndGenome (Genome a) where
 --     getRandomGenome = undefined
-
--- solution :: (RandomGen g, Ord a, RndGenome a)
---     => Problem a
---     -> Rand g Float
--- solution p = do
---     population <- trace "rndpop" (getRandomPopulation populationSize)
---     lastGen <- nthGeneration p generationsSize population
---     return $ best p lastGen
---     where
---         best (Problem _ (Fitness Maximize fitness) _ _) p =  maximum $ fmap fitness $ S.toList p
---         best (Problem _ (Fitness Minimize fitness) _ _) p =  minimum $ fmap fitness $ S.toList p
-
-
--- nthGeneration :: (RandomGen g, Ord a)
---     => Problem a
---     -> Int
---     -> Population a
---     -> Rand g (Population a)
--- nthGeneration _ 0 p = return p
--- nthGeneration pro n p = do
---     gen <- generation pro p
---     nthGeneration pro (n-1) gen
--- -- nthGeneration pro n p = generation pro p >>= nthGeneration pro (n-1)
-
-
--- generation :: (RandomGen g, Ord a)
---     => Problem a
---     -> Population a
---     -> Rand g (Population a)
--- generation pro@(Problem _ (Fitness Maximize _) _ _) p = generation' pro p S.toDescList
--- generation pro@(Problem _ (Fitness Minimize _) _ _) p = generation' pro p S.toAscList
-
--- generation' (Problem n fit isValid disturb) p flist = do
---     let elitePopulation = take n $ flist p
---     children <- replicateM m $ getChild fit isValid disturb p
---     return $ S.fromList $ L.union elitePopulation children
---     -- return $ S.union elitePopulation (S.fromList children)
---     -- return $ S.union ((trace ("elite: " ++ show (size elitePopulation))) elitePopulation)
---     --     $ trace ("children: " ++ show (size $ S.fromList children)) $ S.fromList children
---     where
---         m = (size p) - n
---         getChild fit isValid disturb p = do
---             p1 <- tournament fit p
---             p2 <- tournament fit p
---             mating isValid disturb p1 p2
-
-
-
 
 -- getRandomGene :: (RandomGen g) => Genome a -> Rand g a
 -- getRandomGene genome = do

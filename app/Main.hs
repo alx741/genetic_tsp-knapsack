@@ -30,10 +30,19 @@ main = do
     -- print $ knapsackIsUnderFilled cross
     -- print $ knapsackTotalValue cross
 
-    -- Test tournament
-    pop <- (evalRandIO $ generatePopulation 50) :: IO (Population Element)
-    selected <- evalRandIO $ tournament knapsackProblem pop
-    print selected
-    print $ knapsackIsUnderFilled selected
-    print $ knapsackTotalValue selected
+    -- -- Test tournament
+    -- pop <- (evalRandIO $ generatePopulation 50) :: IO (Population Element)
+    -- selected <- evalRandIO $ tournament knapsackProblem pop
+    -- print selected
+    -- print $ knapsackIsUnderFilled selected
+    -- print $ knapsackTotalValue selected
 
+    -- -- Test generation
+    -- pop <- (evalRandIO $ generatePopulation 50) :: IO (Population Element)
+    -- gen <- evalRandIO $ generation knapsackProblem pop
+    -- print $ sum $ fmap knapsackTotalValue pop
+    -- print $ sum $ fmap knapsackTotalValue gen
+
+    -- Test all
+    sol <- evalRandIO $ solution knapsackProblem
+    print sol
