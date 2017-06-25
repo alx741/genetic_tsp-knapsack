@@ -14,17 +14,6 @@ type Population a = V.Vector (Genome a)
 data Goal = Minimize | Maximize
 type Elitism = Int
 
-generationsSize :: Int
-generationsSize = 1000
-
-populationSize :: Int
-populationSize = 50
-
--- class GeneticProblem a where
---     -- fitnessGoal :: Goal
---     elitism :: Elitism
---     fitnessValue :: Genome a -> Float
-
 data GeneticProblem a = GeneticProblem
     { goal :: Goal
     , elitism :: Elitism
@@ -35,6 +24,12 @@ class Ord a => Gene a where
     fitness :: Genome a -> Float
     isValid :: Genome a -> Bool
     rndGenome :: (RandomGen g) => Rand g (Genome a)
+
+generationsSize :: Int
+generationsSize = 100
+
+populationSize :: Int
+populationSize = 50
 
 generatePopulation :: (RandomGen g, Gene a) => Int -> Rand g (Population a)
 generatePopulation n = replicateM n rndGenome >>= return . V.fromList
@@ -108,34 +103,3 @@ mutate genome = do
     let rndGene = genome V.! rndIndex
     let mutant = genome V.// [(rndIndex, disturb rndGene)]
     if isValid mutant then return mutant else mutate genome
-
--- selectRandomGene :: (RandomGen g) => Genome a -> Rand g a
--- selectRandomGene genome = do
---     rndIndex <- getRandomR (0, (V.length genome) - 1)
---     return $ genome V.! rndIndex
-
--- data Fitness a = Fitness
---     { fitnessGoal :: Goal
---     , fitnessValue :: Genome a -> Float
---     }
-
--- data Problem a = Problem
---     { elitism :: Elitism
---     , fitness :: Fitness a
---     , isValid :: (Genome a -> Bool)
---     , disturb :: (a -> a)
---     }
-
--- class RndGenome a where
---     getRandomGenome :: (RandomGen g) => Rand g (Genome a)
-
--- instance RndGenome (Genome a) where
---     getRandomGenome = undefined
-
--- getRandomGene :: (RandomGen g) => Genome a -> Rand g a
--- getRandomGene genome = do
---     rndIndex <- getRandomR (0, (size genome) - 1)
---     return $ S.elemAt rndIndex genome
-
--- getRandomGenes :: (RandomGen g) => Int -> Genome a -> Rand g [a]
--- getRandomGenes n genome = replicateM n $ getRandomGene genome

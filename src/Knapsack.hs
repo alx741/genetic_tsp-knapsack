@@ -22,7 +22,6 @@ newtype ElementId = ElementId Int
     deriving (Eq, Ord, Show, Read)
 
 instance Eq Element where
-    -- (==) e1 e2 = (elemId e1 == elemId e2) && (selected e1 == selected e2)
     (==) e1 e2 = elemId e1 == elemId e2
 
 instance Ord Element where
