@@ -2,14 +2,20 @@ module Main where
 
 import Genetic
 import Knapsack
+import Tsp
 import Control.Monad.Random
 import Debug.Trace
 import Data.Set as S
 
 main :: IO ()
 main = do
-    sol <- evalRandIO $ solve knapsackProblem
+    sol <- evalRandIO $ solve tspProblem
     print sol
+
+-- main :: IO ()
+-- main = do
+--     sol <- evalRandIO $ solve knapsackProblem
+--     print sol
 
     -- Test population generation
     -- pop <- (evalRandIO $ generatePopulation 50) :: IO (Population Element)

@@ -5,9 +5,7 @@ module Knapsack where
 
 import Genetic
 import Control.Monad.Random
-import Data.Set as S
 import qualified Data.Vector as V
-import Debug.Trace
 
 knapsackSize = 50
 
@@ -16,7 +14,7 @@ data Element = Element
     , selected :: Bool
     , weight :: Int
     , value :: Int
-    } deriving (Read)
+    }
 
 newtype ElementId = ElementId Int
     deriving (Eq, Ord, Show, Read)
@@ -36,6 +34,7 @@ instance Gene Element where
     fitness = knapsackTotalValue
     isValid = knapsackIsUnderFilled
     mutate = knapsackMutate
+    crossover = knapsackCrossover
     rndGenome = knapsackRndSol
 
 knapsackProblem :: GeneticProblem Element
@@ -57,6 +56,15 @@ knapsackIsUnderFilled :: Genome Element -> Bool
 knapsackIsUnderFilled genome = totalWeight genome <= knapsackSize
     where totalWeight gen =
             V.foldl' (\i g -> if selected g then i + weight g else i) 0 gen
+
+knapsackCrossover :: (RandomGen g) => Genome Element -> Genome Element -> Rand g (Genome Element)
+knapsackCrossover g1 g2 = do
+    let n = V.length g1
+        m = n `div` 2
+        g1' = V.slice 0 m g1
+        g2' = V.slice m (n-m) g2
+        cross = g1' V.++ g2'
+    if isValid cross then return cross else mutate g2 >>= knapsackCrossover g1
 
 knapsackRndSol :: (RandomGen g) => Rand g (Genome Element)
 knapsackRndSol = do

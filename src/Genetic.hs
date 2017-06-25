@@ -4,10 +4,7 @@ module Genetic where
 
 import Control.Monad.Random
 import Control.Monad (replicateM)
-import Data.Set as S
 import qualified Data.Vector as V
-import Data.List as L
-import Debug.Trace
 
 type Genome a = V.Vector a
 type Population a = V.Vector (Genome a)
@@ -23,6 +20,7 @@ class Ord a => Gene a where
     fitness :: Genome a -> Float
     isValid :: Genome a -> Bool
     mutate :: (RandomGen g) => Genome a -> Rand g (Genome a)
+    crossover :: (RandomGen g) => Genome a -> Genome a -> Rand g (Genome a)
     rndGenome :: (RandomGen g) => Rand g (Genome a)
 
 generationsSize :: Int
@@ -70,6 +68,9 @@ nthGeneration pro n p = do
     gen <- generation pro p
     nthGeneration pro (n-1) gen
 
+mating :: (RandomGen g, Gene a) => Genome a -> Genome a -> Rand g (Genome a)
+mating p1 p2 = crossover p1 p2 >>= mutate
+
 tournament :: (RandomGen g, Gene a)
     => GeneticProblem a
     -> Population a
@@ -77,29 +78,9 @@ tournament :: (RandomGen g, Gene a)
 tournament problem@(GeneticProblem Maximize _) p = tournament' problem maximum p
 tournament problem@(GeneticProblem Minimize _) p = tournament' problem minimum p
 
-tournament' (GeneticProblem Maximize _) best p = do
+tournament' _ best p = do
     let k = (div (V.length p) 4) + 2
     contestantsIndx <- replicateM k (getRandomR (0, (V.length p) - 1))
     let contestants = fmap (p V.!) contestantsIndx
     let fitnesses = fmap fitness contestants
     return $ snd $ best $ zip fitnesses contestants
-
-
-mating :: (RandomGen g, Gene a) => Genome a -> Genome a -> Rand g (Genome a)
-mating p1 p2 = crossover p1 p2 >>= mutate
-
-crossover :: (RandomGen g, Gene a) => Genome a -> Genome a -> Rand g (Genome a)
-crossover g1 g2 = do
-    let n = V.length g1
-        m = n `div` 2
-        g1' = V.slice 0 m g1
-        g2' = V.slice m (n-m) g2
-        cross = g1' V.++ g2'
-    if isValid cross then return cross else mutate g2 >>= crossover g1
-
--- mutate :: (RandomGen g, Gene a) => Genome a -> Rand g (Genome a)
--- mutate genome = do
---     rndIndex <- getRandomR (0, (V.length genome) - 1)
---     let rndGene = genome V.! rndIndex
---     let mutant = genome V.// [(rndIndex, disturb rndGene)]
---     if isValid mutant then return mutant else mutate genome
