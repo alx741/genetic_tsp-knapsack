@@ -5,18 +5,20 @@ module Genetic where
 import Control.Monad.Random
 import Control.Monad (replicateM)
 import Data.Set as S
-import Data.Vector as V
+import qualified Data.Vector as V
 import Data.List as L
 import Debug.Trace
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
-
--- type Genome a = Set a
-type Genome a = Vector a
-type Population a = Vector (Genome a)
+type Genome a = V.Vector a
+type Population a = V.Vector (Genome a)
 data Goal = Minimize | Maximize
 type Elitism = Int
+
+generationsSize :: Int
+generationsSize = 1000
+
+populationSize :: Int
+populationSize = 50
 
 -- class GeneticProblem a where
 --     -- fitnessGoal :: Goal
@@ -28,36 +30,53 @@ data GeneticProblem a = GeneticProblem
     , elitism :: Elitism
     }
 
-class Gene a where
+class Ord a => Gene a where
     disturb :: a -> a
     fitness :: Genome a -> Float
     isValid :: Genome a -> Bool
     rndGenome :: (RandomGen g) => Rand g (Genome a)
 
+generatePopulation :: (RandomGen g, Gene a) => Int -> Rand g (Population a)
+generatePopulation n = replicateM n rndGenome >>= return . V.fromList
 
--- mutation :: (RandomGen g, Gene a) => Genome a -> Rand g (Genome a)
--- mutation genome = do
---     rndGene <- selectRandomGene genome
---     let disturbedGene = disturb rndGene
---     let mutant =  S.insert disturbedGene $ S.delete rndGene genome
---     if isValid mutant
---         then return mutant
---         else mutation isValid disturb genome
--- -- mutation isValid disturb genome = do
--- --     rndGene <- getRandomGene genome
--- --     let disturbedGene = disturb rndGene
--- --     let mutant =  S.insert disturbedGene $ S.delete rndGene genome
--- --     if isValid mutant
--- --         then return mutant
--- --         else mutation isValid disturb genome
+tournament :: (RandomGen g, Gene a)
+    => GeneticProblem a
+    -> Population a
+    -> Rand g (Genome a)
+tournament problem@(GeneticProblem Maximize _) p = tournament' problem maximum p
+tournament problem@(GeneticProblem Minimize _) p = tournament' problem minimum p
 
-selectRandomGene :: (RandomGen g) => Genome a -> Rand g a
-selectRandomGene genome = do
+tournament' (GeneticProblem Maximize _) best p = do
+    let k = (div (V.length p) 4) + 2
+    contestantsIndx <- replicateM k (getRandomR (0, (V.length p) - 1))
+    let contestants = fmap (p V.!) contestantsIndx
+    let fitnesses = fmap fitness contestants
+    return $ snd $ best $ zip fitnesses contestants
+
+
+mating :: (RandomGen g, Gene a) => Genome a -> Genome a -> Rand g (Genome a)
+mating p1 p2 = crossover p1 p2 >>= mutate
+
+crossover :: (RandomGen g, Gene a) => Genome a -> Genome a -> Rand g (Genome a)
+crossover g1 g2 = do
+    let n = V.length g1
+        m = n `div` 2
+        g1' = V.slice 0 m g1
+        g2' = V.slice m (n-m) g2
+        cross = g1' V.++ g2'
+    if isValid cross then return cross else mutate g2 >>= crossover g1
+
+mutate :: (RandomGen g, Gene a) => Genome a -> Rand g (Genome a)
+mutate genome = do
     rndIndex <- getRandomR (0, (V.length genome) - 1)
-    return $ genome V.! rndIndex
+    let rndGene = genome V.! rndIndex
+    let mutant = genome V.// [(rndIndex, disturb rndGene)]
+    if isValid mutant then return mutant else mutate genome
 
-
-
+-- selectRandomGene :: (RandomGen g) => Genome a -> Rand g a
+-- selectRandomGene genome = do
+--     rndIndex <- getRandomR (0, (V.length genome) - 1)
+--     return $ genome V.! rndIndex
 
 -- data Fitness a = Fitness
 --     { fitnessGoal :: Goal
@@ -76,12 +95,6 @@ selectRandomGene genome = do
 
 -- instance RndGenome (Genome a) where
 --     getRandomGenome = undefined
-
-generationsSize :: Int
-generationsSize = 1000
-
-populationSize :: Int
-populationSize = 50
 
 -- solution :: (RandomGen g, Ord a, RndGenome a)
 --     => Problem a
@@ -129,46 +142,6 @@ populationSize = 50
 --             mating isValid disturb p1 p2
 
 
--- getRandomPopulation :: (RandomGen g, Ord a, RndGenome a) => Int -> Rand g (Population a)
--- getRandomPopulation n = replicateM n getRandomGenome >>= trace "Rnd Pop" (return . S.fromList)
-
--- mating :: (RandomGen g, Ord a)
---     => (Genome a -> Bool)
---     -> (a -> a)
---     -> Genome a
---     -> Genome a
---     -> Rand g (Genome a)
--- mating isValid disturb p1 p2 = do
---     child <- crossover isValid p1 p2
---     mutation isValid disturb child
-
-
--- crossover :: (RandomGen g, Ord a)
---     => (Genome a -> Bool)
---     -> Genome a
---     -> Genome a
---     -> Rand g (Genome a)
--- crossover isValid p1 p2 = do
---     genes <- getRandomGenes (size p1) $ S.union p1 p2
---     let offspring = S.fromList genes
---     if isValid offspring
---         then return offspring
---         else crossover isValid p1 p2
-
-
--- tournament :: (RandomGen g, Ord a)
---     => Fitness a
---     -> Population a
---     -> Rand g (Genome a)
--- tournament fit@(Fitness Maximize fitness) p = tournament' fit maximum p
--- tournament fit@(Fitness Minimize fitness) p = tournament' fit minimum p
-
--- tournament' (Fitness _ fitness) best p = do
---     let k = (div (size p) 4) + 2
---     contestantsIndx <- replicateM k (getRandomR (0, (size p) - 1))
---     let contestants = fmap (flip elemAt p) contestantsIndx
---     let fitnesses = fmap fitness contestants
---     return $ snd $ best $ zip fitnesses contestants
 
 
 -- getRandomGene :: (RandomGen g) => Genome a -> Rand g a

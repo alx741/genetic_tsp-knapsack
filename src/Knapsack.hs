@@ -39,6 +39,9 @@ instance Gene Element where
     isValid = knapsackIsUnderFilled
     rndGenome = knapsackRndSol
 
+knapsackProblem :: GeneticProblem Element
+knapsackProblem = GeneticProblem Maximize 1
+
 knapsackSwap :: Element -> Element
 knapsackSwap (Element eid selected w v) = Element eid (not selected) w v
 
@@ -61,9 +64,6 @@ knapsackRndSol = do
         flipRandom e = do
             bool <- getRandom
             if bool then return $ disturb e else return $ e
-
--- knapsackProblem :: Problem Element
--- knapsackProblem = Problem 5 knapsackFitness knapsackIsValid knapsackDisturb
 
 -- Total Weight = 70
 -- Total Value = 73
