@@ -24,7 +24,7 @@ class Ord a => Gene a where
     rndGenome :: (RandomGen g) => Rand g (Genome a)
 
 generationsSize :: Int
-generationsSize = 100
+generationsSize = 500
 
 populationSize :: Int
 populationSize = 50

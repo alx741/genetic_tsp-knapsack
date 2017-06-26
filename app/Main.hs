@@ -5,11 +5,12 @@ import Knapsack
 import Tsp
 import Control.Monad.Random
 import Debug.Trace
-import Data.Set as S
+import qualified Data.Vector as V
 
 main :: IO ()
 main = do
-    sol <- evalRandIO $ solve tspProblem
+    -- sol <- evalRandIO $ solve tspProblem
+    sol <- evalRandIO $ solve knapsackProblem
     print sol
 
 -- main :: IO ()
