@@ -5,70 +5,63 @@ import qualified Data.Vector as V
 import System.Exit
 import Text.Megaparsec
 import Text.Megaparsec.String
+import qualified Text.Megaparsec.Lexer as ML
 import Data.Char
 import Tsp
 
 data Coordinates = Coordinates
-    { coordLat :: Float
-    , coordLng :: Float
-    }
+    { coordLat :: Int
+    , coordLng :: Int
+    } deriving (Show, Eq)
 
--- c1 = Coordinates 9860 14152
--- c2 = Coordinates 9396 14616
+type NodeId = Int
+data Node = Node NodeId Coordinates deriving (Show)
+
+instance Eq Node where
+    (==) (Node n1 _) (Node n2 _) = n1 == n2
+
+data TSPInstance = TSPInstance
+    { tspName :: String
+    , tspDimension :: Int
+    , tspNodes :: [Node]
+    } deriving (Show)
 
 euclideanDistance :: Coordinates -> Coordinates -> Int
-euclideanDistance c1 c2 = round $ sqrt $ xd^2 + yd^2
+euclideanDistance c1 c2 = round $ sqrt $ fromIntegral $ xd^2 + yd^2
     where xd = coordLat c1 - coordLat c2
           yd = coordLng c1 - coordLng c2
 
--- ja :: Parser String
--- ja = string "NAME :"
-
 attributeParser :: String -> Parser String
 attributeParser attrib = do
-    let attrib' = fmap toUpper attrib
-    string attrib' >> space >> char ':' >> space
+    string' attrib >> space >> char ':' >> space
     value <- some $ alphaNumChar <|> separatorChar <|> printChar
-    -- value <- some anyChar
     eol
     return value
 
-tspLibParser :: Parser String
+intParser :: Parser Int
+intParser = do
+    i <- ML.integer
+    return $ fromIntegral i
+
+nodeParser :: Parser Node
+nodeParser = do
+    space
+    id <- intParser
+    space
+    latitude <- intParser
+    space
+    longitude <- intParser
+    eol
+    return $ Node id $ Coordinates latitude longitude
+
+tspLibParser :: Parser TSPInstance
 tspLibParser = do
     name <- attributeParser "name"
     _ <- attributeParser "comment"
     _ <- attributeParser "type"
     dimension <- attributeParser "dimension"
     edge_type <- attributeParser "edge_weight_type"
-    return $ name
-
--- readData :: FilePath -> IO KnapsackProblem
--- readData fp = do
---     inputData <- readFile fp
---     case (parse knapsackParser fp inputData) of
---         Left err -> putStr (parseErrorPretty err) >> exitFailure
---         Right xs -> return xs
--- knapsackParser :: Parser KnapsackProblem
--- knapsackParser = do
---     numberItems <- liftM read $ some digitChar
---     space
---     maxWeight <- liftM read $ some digitChar
---     eol
---     eol
---     items <- some itemParser
---     eof
---     return $ KnapsackProblem numberItems maxWeight
---            $ sortByDensity $ V.fromList $ identifyItems items
--- itemParser :: Parser ItemSimple
--- itemParser = do
---     weight <- liftM read $ some digitChar
---     space
---     value <- liftM read $ some digitChar
---     eol
---     return $ ItemSimple weight value
--- data ItemSimple = ItemSimple
---     { itemWeight :: Float
---     , itemValue :: Float
---     } deriving (Show)
--- identifyItems :: [ItemSimple] -> [Item]
--- identifyItems is = fmap (\(i, ItemSimple w v) -> Item i w v) $ zip [1..] is
+    string' "node_coord_section" >> eol
+    nodes <- many nodeParser
+    string' "EOF"
+    return $ TSPInstance name (read dimension) nodes
