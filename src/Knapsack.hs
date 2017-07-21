@@ -13,7 +13,7 @@ data Element = Element
     { elemId :: ElementId
     , selected :: Bool
     , weight :: Int
-    , value :: Int
+    , value :: Float
     }
 
 newtype ElementId = ElementId Int
@@ -48,7 +48,7 @@ knapsackMutate genome = do
     if isValid mutant then return mutant else mutate genome
 
 knapsackTotalValue :: Genome Element -> Float
-knapsackTotalValue genome = fromIntegral $ totalValue genome
+knapsackTotalValue genome = totalValue genome
     where totalValue gen =
             V.foldl' (\i g -> if selected g then i + value g else i) 0 gen
 
